@@ -222,5 +222,8 @@ if uploaded_file is not None:
     # Ask the user to enter a file name
     file_name = st.text_input("Enter a file name for the saved data")
 
-    # Save the cleaned DataFrame as a CSV file in the current working directory
-    df.to_csv(f"./{file_name}.csv", index=False)
+    # Ask the user to enter the path to the directory to save the file in
+    directory = st.text_input("Enter the path to the directory to save the file in")
+
+    # Save the cleaned DataFrame as a CSV file in the specified directory
+    df.to_csv(f"{directory}/{file_name}.csv", index=False)
