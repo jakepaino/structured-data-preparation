@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit.sync as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -220,7 +220,7 @@ if uploaded_file is not None:
     st.info("We are now ready to save your model-ready data. Be sure to save it as a different name so it does not overwrite the original data.")
 
     # Ask the user to enter the path to the directory to save the file in
-    save_directory = st.directory_selector("Select a directory to save the file")
+    save_directory = st.select_folder("Select a directory to save the file")
     
     # Ask the user to enter a file name
     file_name = st.text_input("Enter a file name for the saved data")
