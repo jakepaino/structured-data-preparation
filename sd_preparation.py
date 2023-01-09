@@ -223,7 +223,7 @@ if uploaded_file is not None:
     file_name = st.text_input("Enter a file name for the saved data")
 
     # Ask the user to enter the path to the directory to save the file in
-    save_directory = st.directory_selector("Select a directory to save the file")
+    save_directory = st.file_uploader("Select a directory to save the file")
 
     # Save the cleaned DataFrame as a CSV file in the specified directory
     df.to_csv(f"{save_directory}/{file_name}.csv", index=False)
