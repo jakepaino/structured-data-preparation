@@ -219,11 +219,11 @@ if uploaded_file is not None:
     # Display a message indicating that the data is ready to be saved
     st.info("We are now ready to save your model-ready data. Be sure to save it as a different name so it does not overwrite the original data.")
 
+    # Ask the user to enter the path to the directory to save the file in
+    save_directory = st.file_downloader("Select a directory to save the file")
+    
     # Ask the user to enter a file name
     file_name = st.text_input("Enter a file name for the saved data")
-
-    # Ask the user to enter the path to the directory to save the file in
-    save_directory = st.file_uploader("Select a directory to save the file")
 
     # Save the cleaned DataFrame as a CSV file in the specified directory
     df.to_csv(f"{save_directory}/{file_name}.csv", index=False)
